@@ -10,8 +10,11 @@ RUN apk update && \
 	apk add g++ && \
 	apk add gcc && \
 	apk add make && \
+	apk add linux-headers && \
+	apk add ethtool && \
 	apk add git && \
 
+	pip install --upgrade pip && \
 	pip install virtualenv && \
 
 	git clone --depth 1 https://github.com/foosel/OctoPrint.git && \
