@@ -30,6 +30,5 @@ RUN apk update && \
 	apk del py2-yaml && \
 	apk del linux-headers && \
 	apk del git
-	#apk cache clean 
 
-ENTRYPOINT /usr/local/src/venv/bin/octoprint --iknowwhatimdoing --host 0.0.0.0 --port 80 --basedir /data/octoprint
+#ENTRYPOINT /usr/local/src/venv/bin/octoprint --iknowwhatimdoing --host 0.0.0.0 --port 80 --basedir /data/octoprint
