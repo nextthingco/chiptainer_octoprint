@@ -40,3 +40,6 @@ RUN apk update && \
 	apk del linux-headers && \
 	apk del git
 
+ENTRYPOINT /bin/sh /etc/init.d/avahi-daemon restart && \
+        ./OctoPrint/venv/bin/octoprint --iknowwhatimdoing --host 0.0.0.0 --port 80 --basedir /data/octoprint  && \
+        /bin/sh
