@@ -2,7 +2,7 @@
 FROM ntc-registry.githost.io/nextthingco/chiptainer_alpine
 
 # Install tools needed to download and build the CHIP_IO library from source.
-RUN apk update &&
+RUN apk update && \
 	apk add python-dev && \
 	apk add py-setuptools && \
 	apk add py2-pip && \
