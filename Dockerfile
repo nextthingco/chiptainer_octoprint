@@ -11,7 +11,6 @@ RUN apk update && \
 	apk add gcc && \
 	apk add make && \
 	apk add linux-headers && \
-	apk add ethtool && \
 	apk add git && \
 
 	pip install --upgrade pip && \
@@ -22,6 +21,15 @@ RUN apk update && \
 	virtualenv venv && \
 	./venv/bin/pip install pip --upgrade && \
 	./venv/bin/python setup.py install && \
-	mkdir /.octoprint
+	mkdir /.octoprint && \
+
+	apk del py2-pip && \
+	apk del g++ && \
+	apk del gcc && \
+	apk del make && \
+	apk del py2-yaml && \
+	apk del linux-headers && \
+	apk del git && \
+	apk cache clean 
 
 ENTRYPOINT /usr/local/src/venv/bin/octoprint --iknowwhatimdoing --host 0.0.0.0 --port 80 --basedir /data/octoprint
